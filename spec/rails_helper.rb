@@ -15,6 +15,7 @@ SimpleCov.start 'rails' do
   add_filter '/db/'
   add_filter '/spec/' #for rspec
 end
+SimpleCov.coverage_dir 'public/coverage'
 
 ####factory bot stuff
 require 'rspec/rails'
