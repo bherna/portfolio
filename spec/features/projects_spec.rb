@@ -4,8 +4,32 @@
 require 'rails_helper'
 
 RSpec.feature "Projects", type: :feature do
+
+
+  describe 'the signin process', type: :feature do
+    before :each do
+      User.create(email: 'abc@gmail.com', password: '123456')
+    end
+
+    it 'signs @user in' do
+      visit '/users/sign_in'
+      fill_in 'Email', with: 'abc@gmail.com'
+      fill_in 'Password', with: '123456'
+      click_button 'Log in'
+      expect(current_path).to eq(root_path)
+      expect(page).to have_text('Signed in successfully')
+    end
+  end
+
   context "Create new project" do
     before(:each) do
+      User.create(email: 'abc@gmail.com', password: '123456')
+      visit '/users/sign_in'
+      fill_in 'Email', with: 'abc@gmail.com'
+      fill_in 'Password', with: '123456'
+      click_button 'Log in'
+
+
       visit new_project_path
       within("form") do
         fill_in "Title", with: "Test title"
@@ -25,8 +49,15 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Update project" do
+
     let(:project) { Project.create(title: "Test title", description: "Test content") }
+
     before(:each) do
+      User.create(email: 'abc@gmail.com', password: '123456')
+      visit '/users/sign_in'
+      fill_in 'Email', with: 'abc@gmail.com'
+      fill_in 'Password', with: '123456'
+      click_button 'Log in'
       visit edit_project_path(project)
     end
 
@@ -48,7 +79,16 @@ RSpec.feature "Projects", type: :feature do
   end
 
   context "Remove existing project" do
+
     let!(:project) { Project.create(title: "Test title", description: "Test content") }
+    before(:each) do
+      User.create(email: 'abc@gmail.com', password: '123456')
+      visit '/users/sign_in'
+      fill_in 'Email', with: 'abc@gmail.com'
+      fill_in 'Password', with: '123456'
+      click_button 'Log in'
+    end
+    
     scenario "remove project" do
       visit projects_path
       click_link "Destroy"

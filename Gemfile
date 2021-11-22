@@ -67,6 +67,9 @@ group :test do
 
   #adds test coverage
   gem 'simplecov', require: false
+
+  #factory bot: used in making instances of user objects for testing
+  gem 'factory_bot_rails'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
