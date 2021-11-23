@@ -18,6 +18,5 @@ RSpec.describe User, type: :model do
       expect(newUser.valid?).to eq(true)
     end
 
-
   end
 end
