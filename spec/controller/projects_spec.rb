@@ -28,25 +28,25 @@ RSpec.describe ProjectsController, type: :controller do
   end
 
   
-  #context "GET #index" do
+  context "GET #index" do
 
-   # #expects that using the get method will return a response
-    #it "returns a success response" do
+    #expects that using the get method will return a response
+    it "returns a success response" do
 
-     # #http method: get/#index
-      #get :index
-      #puts response.body.inspect
+     #http method: get/#index
+      get :index
+      puts response.body.inspect
 
-      ##THIS IS FOR RAILS younger
-      ##expects repsonse to be status code success/true/200
-      ## expect(response.success).to eq(true)
-      #expect(response).to be_success
+      #THIS IS FOR RAILS younger
+      #expects repsonse to be status code success/true/200
+      # expect(response.success).to eq(true)
+      expect(response).to be_success
 
-      ##THIS IS FOR RAILS 6.0
-      ##i need to check for that instead of 200
-      ##expect(response).to render_template("index")
-    #end
-  #end
+      #THIS IS FOR RAILS 6.0
+      #i need to check for that instead of 200
+      #expect(response).to render_template("index")
+    end
+  end
 
   #context "GET #show" do
    # let!(:project) { Project.create(title: "Test title", description: "Test description") }
