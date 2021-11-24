@@ -1,34 +1,35 @@
+
+
 <p id="notice"><%= notice %></p>
 
-<h1>Projects</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @projects.each do |project| %>
-      <tr>
-        <td><%= project.title %></td>
-        <td><%= project.description %></td>
-        <% if user_signed_in? %>
-          <td><%= link_to 'Show', project %></td>
-          <td><%= link_to 'Edit', edit_project_path(project) %></td>
-          <td><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <% end %>
-
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+<div class="container-fluid text-center">
+  <h1>Projects</h1>
+</div>
 
 <br>
 
-<% if user_signed_in? %>
-  <%= link_to 'New Project', new_project_path %>
+<div class="row" data-masonry='{"percentPosition": true }'>
+
+<% @projects.each do |project| %>
+
+  <div class="col-sm-6 col-lg-4 mb-4 container-fluid">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="card-title underline"><u><%= project.title %></u></h5>
+        <p class="card-text text-truncate"><%= project.description %></p>
+        <p class="card-text h6"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+      <% if user_signed_in? %>
+        <div class="row">
+            <div class="col"><%= link_to 'Show', project, :class=>'text-info' %></div>
+            <div class="col-md-auto"><%= link_to 'Edit', edit_project_path(project), :class=>'text-secondary'%></div>
+            <div class="col"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'text-danger' %></div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+    
 <% end %>
+</div>
+
