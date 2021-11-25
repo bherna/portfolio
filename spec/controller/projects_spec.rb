@@ -18,13 +18,12 @@ RSpec.describe ProjectsController, type: :controller do
 
   let(:valid_session) { {} }
 
-  describe "Get #index" do
-    it "returns a sucesss response" do
-      Project.create! project
-      get :index, params: {}, session: valid_session
+  it "Creates a new project and returns successfull link" do
 
-      expect(response).to be_success #be_successful expects a HTP Status code of 200
-      #expect(response).to have_http_status(302) #Expects a http status of 302, means that we were redirrected
+    Project.create! project
+    get :index, params: {}, session: valid_session
+
+    expect(response).to be_success #be_successful expects a HTP Status code of 200
   end
 
   
@@ -41,10 +40,6 @@ RSpec.describe ProjectsController, type: :controller do
       #expects repsonse to be status code success/true/200
       # expect(response.success).to eq(true)
       expect(response).to be_success
-
-      #THIS IS FOR RAILS 6.0
-      #i need to check for that instead of 200
-      #expect(response).to render_template("index")
     end
   end
 
@@ -66,5 +61,4 @@ RSpec.describe ProjectsController, type: :controller do
     #end
   #end
 
-end
 end

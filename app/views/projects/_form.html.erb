@@ -1,50 +1,49 @@
+<style>
+[class$="project-form-padding"]{
+  padding: 30px;
+}
+</style>
+
 <%= form_with(model: project, local: true) do |form| %>
-  <style> 
-  [class$="project-form-padding"] {
-    padding: 30px;
-  }
-
   
-  </style>
-  <form>
   
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+    <% if project.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <ul>
+          <% project.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+        </ul>
+      </div>
+    <% end %>
 
-  
-  <div class="container">
-    <div class="container-md project-form-padding">
-      <%= form.label :title, :class=>"container h3" %>
-      <%= form.text_field :title, :class=>"container form-control form-control-lg", :placeholder=>"Title" %>
-    </div>
+    
+    <div class="container">
+      <div class="container-md project-form-padding">
+        <%= form.label :title, :class=>"container h3" %>
+          <%= form.text_field :title, :class=>"container form-control form-control-lg", :placeholder=>"Title" %>
+      </div>
 
-    <div class="container-md project-form-padding">
-      <%= form.label :description, :class=>"container h3" %>
-      <%= form.text_area :description, :class=>"container form-control form-control-lg", :placeholder=>"Description" %>
-    </div>
+      <div class="container-md project-form-padding">
+        <%= form.label :description, :class=>"container h3" %>
+          <%= form.text_area :description, :class=>"container form-control form-control-lg", :placeholder=>"Description" %>
+      </div>
 
-    <div class="container px-4">
-      <div class="row gx-5">
-        <div class="col">
-          <div><%= link_to 'Back', projects_path, :class=> 'btn btn-light btn-lg' %></div>
-        </div>
-        <div class="col">
-          <div><%= form.submit :Submit, class: 'btn btn-light btn-lg' %></div>
+      <div class="container px-4">
+        <div class="row gx-5">
+          <div class="col">
+            <div><%= link_to 'Back', projects_path, :class=> 'btn btn-light btn-lg' %></div>
+          </div>
+          <div class="col">
+            <div><%= form.submit :Submit, class: 'btn btn-light btn-lg' %></div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  </form>
 
+  
 
 
 <% end %>
