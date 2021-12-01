@@ -23,7 +23,6 @@ RSpec.feature "Visiting the homepage", type: :feature do
     end
 
     scenario "we should see the sign out option" do
-      visit root_path
       expect(page).to have_content("Logout")
     end
 
