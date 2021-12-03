@@ -1,51 +1,78 @@
-<div class="container">
-    <div class="py-5">
-      <div class="row">
 
-<h2 class="field col-12">Sign up</h2>
 
-  <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-    <div class="alert text-danger">
-      <%= render "devise/shared/error_messages", resource: resource %>
-    </div>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 
-    <div class="field col-12">
-      <%= f.label :email %><br />
-      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-    </div>
-
-    <div class="field col-12">
-      <%= f.label :password %>
-      <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password" %>
-    </div>
-
-    <div class="field col-12">
-      <%= f.label :password_confirmation %><br />
-      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-    </div>
-
-    <div class="invisible col-12"><h5>yo</h5></div>
-</div>
-
-<div class="row">
-  <div class="actions col-12">
-      <%= f.submit "Sign up" %>
-  <% end %>
+  <div class="alert text-danger">
+    <%= render "devise/shared/error_messages", resource: resource %>
   </div>
 
-  <div class="invisible col-12"><h5>yo</h5></div>
-
-  <div class="col-12">
-    <%= render "devise/shared/links" %>
-  </div>
-</div>
-      
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center mb-5">
+      </div>
     </div>
-</div>
 
 
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10">
+        <div class="wrap d-md-flex">
+          <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+            <div class="text w-100">
+              <h2>Make an account</h2>
+              <p>Already have an account?</p>
+                <%= render "devise/shared/links" %>
+              </div>
+          </div>
 
+          <div class="login-wrap p-4 p-lg-5">
+
+            <div class="d-flex">
+               <div class="w-100">
+                <h3 class="mb-4">Sign Up</h3>
+              </div>
+
+              <div class="w-100">
+                <p class="social-media d-flex justify-content-end">
+                <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-facebook"></span></a>
+                <a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
+                </p>
+              </div>
+
+            </div>
+
+            <div class="form-group mb-3">
+              <%= f.label :email, class: "label" %><br />
+              <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control rounded-pill" %>
+            </div>
+
+            <div class="form-group mb-3">
+              <%= f.label :password, class: "label" %>
+              <% if @minimum_password_length %>
+                <em>(<%= @minimum_password_length %> characters minimum)</em>
+              <% end %><br />
+              <%= f.password_field :password, autocomplete: "new-password", class: "form-control rounded-pill" %>
+            </div>
+
+            <div class="form-group mb-3">
+              <%= f.label :password_confirmation, class: "label" %><br />
+              <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control rounded-pill" %>
+            </div>
+
+            <div class="form-group">
+              <%= f.submit "Sign up", class: "form-control btn btn-primary submit px-3 rounded-pill" %>
+              <% end %>
+            </div>
+
+
+            
+        </div>
+
+
+        
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
