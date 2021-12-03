@@ -1,35 +1,41 @@
 
 
-<p id="notice"><%= notice %></p>
+<div class="container text-center text-success">
+  <p id="notice"><%= notice %></p>
+</div>
 
-<div class="container-fluid text-center">
+<div class="container text-center text-light">
   <h1>Projects</h1>
 </div>
 
 <br>
 
-<div class="row" data-masonry='{"percentPosition": true }'>
-
+<div class="container mx-auto mt-4">
+<div class="row">
 <% @projects.each do |project| %>
 
-  <div class="col-sm-6 col-lg-4 mb-4 container-fluid">
-    <div class="card text-center">
-      <div class="card-body">
-        <h5 class="card-title underline"><u><%= project.title %></u></h5>
-        <p class="card-text text-truncate"><%= project.description %></p>
-        <p class="card-text h6"><small class="text-muted">Last updated 3 mins ago</small></p>
-      </div>
+  <div class="col mb-4">
+  <div class="card" style="width: 20rem;">
+    <div class="card-header text-center">
+      <h5><%= project.title %></h5>
+    </div>
+    <div class="card-body">
+      <p class="card-text"><%= project.description %></p>
+      <p class="card-text"><small class="text-muted">By: @user</small></p>
+    
       <% if user_signed_in? %>
         <div class="row">
-            <div class="col"><%= link_to 'Show', project, :class=>'text-info' %></div>
-            <div class="col-md-auto"><%= link_to 'Edit', edit_project_path(project), :class=>'text-secondary'%></div>
-            <div class="col"><%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'text-danger' %></div>
+          <%= link_to 'Show', project, class:"btn mr-2" %>
+          <%= link_to 'Edit', edit_project_path(project), class:"btn mr-2" %>
+          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'text-danger' %>
+        </div>
         </div>
       <% end %>
+
     </div>
   </div>
 
     
 <% end %>
 </div>
-
+</div>
