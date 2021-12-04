@@ -19,6 +19,7 @@ RSpec.feature "Projects", type: :feature do
     scenario "should be successful" do
       fill_in "Description", with: "Test description"
       click_button "Submit"
+      visit projects_path
       expect(page).to have_content("Project was successfully created")
     end
 
@@ -44,6 +45,7 @@ RSpec.feature "Projects", type: :feature do
         fill_in "Description", with: "New description content"
       end
       click_button "Submit"
+      visit projects_path
       expect(page).to have_content("Project was successfully updated")
     end
 
