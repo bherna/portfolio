@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="py-5">
+      <div class="row">
+
+<h2 class="col-12">Forgot your password?</h2>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  
+  <div class="alert text-danger">
+    <%= render "devise/shared/error_messages", resource: resource %>
+  </div>
+
+  <div class="field col-12">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="invisible col-12"><h6>yo</h6></div>
+
+  <div class="actions col-12">
+    <%= f.submit "Send me reset password instructions" %>
+  </div>
+<% end %>
+
+<div class="col-12">
+<div class="invisible col-12"><h5>yo</h5></div>
+  <%= render "devise/shared/links" %>
+</div>
+
+      </div>
+    </div>
+</div>

@@ -1,27 +1,58 @@
+
+
 <%= form_with(model: project, local: true) do |form| %>
-  <% if project.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
+  
+<section class="ftco-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-12 col-lg-10">
 
-      <ul>
-      <% project.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+        <% if project.errors.any? %>
+          <div class="alert text-danger" id="error_explanation">
+            <h2 class="alert text-danger"><%= pluralize(project.errors.count, "error") %> prohibited this project from being saved:</h2>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+            <ul>
+              <% project.errors.full_messages.each do |message| %>
+                <li><%= message %></li>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+      
+        <div class="wrap d-md-flex">
+
+        
+          <div class="login-wrap p-4 p-lg-5">
+
+            <div class="d-flex">
+              <div class="w-100">
+                <%= form.label :title, :class=>"label h3" %>
+                <%= form.text_field :title, class:"form-control form-control-lg", :placeholder=>"Title" %>
+              </div>
+            </div>
+
+            <br>
+
+            <div class="d-flex">
+              <div class="w-100">
+                <%= form.label :description, :class=>"label h3" %>
+                <%= form.text_area :description, class:"form-control form-control-lg", :placeholder=>"Description" %>
+              </div>
+            </div>
+
+            <br>
+
+            <%= form.submit :Submit, class: 'btn btn-light btn-lg' %>
+
+          </div>
+        </div>
+
+        <%= link_to 'Back', projects_path %>
+
+      </div>
   </div>
+</section>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>

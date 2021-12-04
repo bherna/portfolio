@@ -4,20 +4,13 @@
       "/root/portfolio/app/controllers/projects_controller.rb": {
         "lines": [
           1,
+          null,
+          1,
           1,
           null,
           null,
           1,
-          4,
-          null,
-          null,
-          null,
-          1,
-          null,
-          null,
-          null,
-          1,
-          2,
+          9,
           null,
           null,
           null,
@@ -28,19 +21,15 @@
           1,
           2,
           null,
-          2,
-          2,
-          2,
+          null,
+          null,
           1,
-          null,
-          2,
-          1,
-          null,
-          null,
           null,
           null,
           null,
           1,
+          2,
+          null,
           2,
           2,
           2,
@@ -54,6 +43,19 @@
           null,
           null,
           1,
+          2,
+          2,
+          2,
+          1,
+          null,
+          2,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
           1,
           1,
           2,
@@ -64,7 +66,7 @@
           1,
           null,
           1,
-          8,
+          7,
           null,
           null,
           null,
@@ -88,10 +90,34 @@
           null
         ]
       },
-      "/root/portfolio/app/models/application_record.rb": {
+      "/root/portfolio/app/controllers/users/sessions_controller.rb": {
         "lines": [
+          null,
+          null,
           1,
-          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null
         ]
       },
@@ -139,6 +165,27 @@
         "branches": {
         }
       },
+      "/root/portfolio/app/models/user.rb": {
+        "lines": [
+          0,
+          null,
+          null,
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
+      "/root/portfolio/app/models/application_record.rb": {
+        "lines": [
+          0,
+          0,
+          0
+        ],
+        "branches": {
+        }
+      },
       "/root/portfolio/app/mailers/application_mailer.rb": {
         "lines": [
           0,
@@ -150,6 +197,6 @@
         }
       }
     },
-    "timestamp": 1637022685
+    "timestamp": 1637617893
   }
 }
