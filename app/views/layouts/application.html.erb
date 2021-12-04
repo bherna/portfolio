@@ -14,24 +14,28 @@
   </head>
 
 
-<nav class="navbar navbar-light" style="background-color: #e3f2fd;">
-  <div class="container-fluid">
-    <a class="navbar-brand mb-0 h1" href="/projects.html">Portfolio</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+  <%= link_to root_path do %>
+    <%= image_tag "book_logo.png", class: "d-inline-block align-top", width: "30", height: "30" %>
+    <h4 class="text-light logo-font">Portfolio</h4>
+  <% end %>
   
-      <div class="navbar-nav mr-auto">
-        <% if user_signed_in? %>
-          <%= link_to 'New Project', new_project_path, :class=>'nav-link active' %>
-        <% end %>
-      </div>
+  
+  <div class="navbar-nav mr-auto">
+    <% if user_signed_in? %>
+      <%= link_to 'New Project', new_project_path, :class=>'nav-link active' %>
+    <% end %>
+  </div>
     
 
-    <ul class="navbar-nav ml-auto">
-      <% if user_signed_in? %>
-          <%= link_to 'Edit profile', edit_user_registration_path, :class=>'nav-link active' %>
-          <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>'nav-link active' %>
-      <% end %>
-    <ul>
-  </div>
+  <ul class="navbar-nav ml-auto">
+    <% if user_signed_in? %>
+      <%= link_to 'Edit profile', edit_user_registration_path, :class=>'nav-link active' %>
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class=>'nav-link active' %>
+    <% end %>
+  <ul>
+  
 </nav>
 
 

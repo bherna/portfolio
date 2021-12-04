@@ -44,31 +44,15 @@ body {
 }
 
    
-.btn-fox {
-    border: 3px solid !important;
-    border-image-slice: 1 !important;
-    background: var(--gradient) !important;
-    background-clip: #fff;
-    -webkit-background-clip: text !important;
-    -webkit-text-fill-color: transparent !important;
-    border-image-source:  var(--gradient) !important; 
-    text-decoration: none;
-    transition: all .4s ease;
-  }
-  
-.btn-fox:hover, .btn-fox:focus {
-    background: var(--gradient) !important;
-    background-clip: #fff;
-    -webkit-background-clip: none !important;
-    -webkit-text-fill-color: #fff !important;
-    border: 3px solid #fff !important; 
-    box-shadow: #222 1px 0 10px;
-    text-decoration: underline;
-  }
+/* font style */
+.logo-font{
+    font-family: "Apple Chancery";
+    display:inline;
+}
 
-
-
-
+.no-underline{
+    text-decoration: none; 
+}
 
 
 //Login in screen css
