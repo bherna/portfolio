@@ -4,7 +4,7 @@
   <p id="notice"><%= notice %></p>
 </div>
 
-<div class="container text-center text-light">
+<div class="container text-center">
   <h1>Projects</h1>
 </div>
 
@@ -25,9 +25,18 @@
     
       <% if user_signed_in? %>
         <div class="row">
-          <%= link_to 'Show', project, class:"btn-fox mr-2" %>
-          <%= link_to 'Edit', edit_project_path(project), class:"btn-fox mr-2" %>
-          <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'text-danger' %>
+
+          <div class="col-3">
+            <%= link_to 'Show', project, class:"btn btn-primary submit px-3 rounded-pill" %>
+          </div>
+
+          <div class="col-3">
+            <%= link_to 'Edit', edit_project_path(project), class:"btn btn-primary submit px-3 rounded-pill" %>
+          </div>
+          <div class="col align-self-center">
+            <%= link_to 'Destroy', project, method: :delete, data: { confirm: 'Are you sure?' }, :class=>'text-danger' %>
+          </div>
+
         </div>  
       <% end %>
     </div>

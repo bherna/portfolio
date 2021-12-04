@@ -27,12 +27,15 @@ body {
 
 .card{
     border-radius: 4px;
-    background: #222 !important;
+    background: rgba(243, 176, 131, 0.267) !important;
     box-shadow: 0 6px 10px rgba(0,0,0,.08), 0 0 6px rgba(0,0,0,.05);
     transition: .3s transform cubic-bezier(.155,1.105,.295,1.12),.3s box-shadow,.3s -webkit-transform cubic-bezier(.155,1.105,.295,1.12);
     border: 1px solid #dd2476 !important;
-    color: #fff;
     margin-bottom: 2rem;
+}
+
+.card-header{
+    background: rgba(243, 176, 131, 0.404) !important;
 }
 
 .card:hover{
@@ -40,12 +43,9 @@ body {
     box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
 }
 
-.card-header{
-    background: rgb(46, 46, 46) !important;
-}
    
 .btn-fox {
-    border: 5px solid !important;
+    border: 3px solid !important;
     border-image-slice: 1 !important;
     background: var(--gradient) !important;
     background-clip: #fff;
@@ -61,7 +61,7 @@ body {
     background-clip: #fff;
     -webkit-background-clip: none !important;
     -webkit-text-fill-color: #fff !important;
-    border: 5px solid #fff !important; 
+    border: 3px solid #fff !important; 
     box-shadow: #222 1px 0 10px;
     text-decoration: underline;
   }
@@ -5417,7 +5417,7 @@ body {
     vertical-align: text-top !important; }
   
   .bg-primary {
-    background-color: #007bff !important; }
+    background-color: #dd2476 !important; }
   
   a.bg-primary:hover, a.bg-primary:focus,
   button.bg-primary:hover,
